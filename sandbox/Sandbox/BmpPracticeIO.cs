@@ -11,13 +11,28 @@ class BmpPracticeIO
         using (StreamWriter bmpOutputFile = new StreamWriter(bmpFileName))
         {
             // You can add text to the file with the WriteLine method
-            bmpOutputFile.WriteLine("This will be the first line in the file");
+            bmpOutputFile.WriteLine("What do a hamster and a cigarette have in common?");
 
             // You can use the $ and include variables just like with Console.WriteLine
-            string bmpColor = "Blue";
-            bmpOutputFile.WriteLine($"My favorite color is {bmpColor}");
+            // string bmpColor = "Blue";
+            bmpOutputFile.WriteLine($"They're both harmless until you light them on fire and stick them in your mouth.");
 
         }
         
+        string[] bmpLines = System.IO.File.ReadAllLines(bmpFileName);
+        
+
+        string bmpJoke = bmpLines[0];
+        string bmpPunchline = bmpLines[1];
+
+        //This loop is for splitting lines into more parts but not useful for this practice
+        //      foreach (string bmpLine in bmpLines)
+        //      {
+        //          string[] parts = bmpLine.Split(",");
+        //      }
+
+
+        Console.WriteLine(bmpJoke);
+        Console.WriteLine(bmpPunchline);
     }
 }
